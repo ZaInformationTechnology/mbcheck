@@ -47,18 +47,24 @@ export function getThailandTeleComOperators(phoneNumber) {
         return 'Phone number is required';
       }
 
-    const telecomOperators = {};
+    const telecomOperators = {
+        "083": { name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
+        "084": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
+        "085": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
+        "088": { name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
+        "089": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
+    };
 
-    const dtacPrefixes = ["085","089", "084"];
+    // const dtacPrefixes = ["085","089", "084"];
 
-    dtacPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
-    });
+    // dtacPrefixes.forEach(prefix => {
+    //     telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+    // });
 
-    const trueMoveHPrefixes = ["083","084", "088"];
-    trueMoveHPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
-    })
+    // const trueMoveHPrefixes = ["083","084", "088"];
+    // trueMoveHPrefixes.forEach(prefix => {
+    //     telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
+    // })
 
     const aisPrefixes = ["080","081","090"];
     aisPrefixes.forEach(prefix=> {
@@ -68,7 +74,7 @@ export function getThailandTeleComOperators(phoneNumber) {
     const formattedPhoneNumber = format_phone(phoneNumber);
     const prefix = formattedPhoneNumber.substring(0, 3);
     
-    return phoneNumber.length !== 7 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
+    return phoneNumber.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
     
 }
 
