@@ -1,6 +1,6 @@
 // composables/useTelecomOperator.js
 
-import { format_phone } from './utils/phoneHelper';
+import { format_phone } from '../utils/phoneFormatter';
 
 export const getTelecomOperatorName = (phoneNumber) => {
     if (!phoneNumber) {
