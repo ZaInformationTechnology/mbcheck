@@ -6,11 +6,6 @@ export const getTelecomOperatorName = (phoneNumber) => {
     if (!phoneNumber) {
       return 'Phone number is required';
     }
-
-    // Check if the phone number length is between 6 and 11
-    if (phoneNumber.length < 8 || phoneNumber.length > 11) {
-        return 'invalid_phone_number';
-    }
   
     const telecomOperators = {
         "099": { name: "Ooredoo", logo: "https://access.cdndata.cloud/marketplace/svg/ooredoo.svg" },
@@ -27,7 +22,11 @@ export const getTelecomOperatorName = (phoneNumber) => {
     const formattedPhoneNumber = format_phone(phoneNumber);
     const prefix = formattedPhoneNumber.substring(0, 3);
 
-    return telecomOperators[prefix] || 'unknown_telecom_operator';
+    if (telecomOperators[prefix].name === "MPT" || telecomOperators[prefix].name === "MEC") {
+        return phoneNumber.length < 8 || phoneNumber.length > 11 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
+      }else{
+        return phoneNumber.length < 11 || phoneNumber.length > 11 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
+      }
 };
 
 module.exports = {
