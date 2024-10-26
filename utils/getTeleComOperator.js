@@ -8,7 +8,7 @@ export const getTelecomOperatorName = (phoneNumber) => {
     }
 
     // Check if the phone number length is between 6 and 11
-    if (phoneNumber.length < 6 || phoneNumber.length > 11) {
+    if (phoneNumber.length < 8 || phoneNumber.length > 11) {
         return 'invalid_phone_number';
     }
   
