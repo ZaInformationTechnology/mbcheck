@@ -7,7 +7,7 @@
           autocomplete="off"
           class="rounded-tl-lg py-4 pl-3 w-[100px] text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#ff5100] hover:border-b-[#ff5100] peer"
         >
-          <CountryCodeSelectInput :size="'200px'" @countryCode="receivedCountryCode"
+          <!-- <CountryCodeSelectInput :size="'200px'" @countryCode="receivedCountryCode" -->
           />
       </label>
         <input
@@ -49,7 +49,7 @@
   </template>
   <script setup>
   import { ref, onMounted, defineProps, defineEmits, watch } from 'vue'
-  import CountryCodeSelectInput from '~/components/CountryCodeSelectInput.vue'
+  import CountryCodeSelectInput from './CountryCodeSelectInput.vue'
   import { format_phone, getTelecomOperatorName } from '~/utils/phone'
 
   const searchCodeCountryName = ref('')

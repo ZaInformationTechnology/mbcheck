@@ -49,7 +49,6 @@
     </template>
     <script setup>
     import { ref, onMounted, defineProps, defineEmits, watch } from 'vue'
-    import useCountryCodes from '~/composables/useCountryCodes'
     
     const searchCodeCountryName = ref('')
     const showCountryCodeContainer = ref(false)
