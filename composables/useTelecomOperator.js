@@ -52,17 +52,17 @@ export function getThailandTeleComOperators(phoneNumber) {
     const dtacPrefixes = ["085","089", "084"];
 
     dtacPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = { name: "DTAC", logo: "https://access.cdndata.cloud/marketplace/svg/mpt.svg" };
+        telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
     });
 
     const trueMoveHPrefixes = ["083","084", "088"];
     trueMoveHPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = {name: "TrueMoveH", logo: "https://access.cdndata.cloud/marketplace/svg/mpt.svg"};
+        telecomOperators[prefix] = {name: "TrueMoveH", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
     })
 
     const aisPrefixes = ["080","081","090"];
     aisPrefixes.forEach(prefix=> {
-        telecomOperators[prefix] = {name: "AIS", logo: "https://access.cdndata.cloud/marketplace/svg/mpt.svg"};
+        telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
     })
     
     const formattedPhoneNumber = format_phone(phoneNumber);
