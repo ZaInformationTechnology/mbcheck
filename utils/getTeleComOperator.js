@@ -30,4 +30,6 @@ export const getTelecomOperatorName = (phoneNumber) => {
     return telecomOperators[prefix] || 'unknown_telecom_operator';
 };
 
-export default getTelecomOperatorName;
+module.exports = {
+    getTelecomOperatorName,
+}
