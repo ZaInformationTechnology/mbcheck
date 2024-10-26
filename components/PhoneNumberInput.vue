@@ -50,7 +50,8 @@
   <script setup>
   import { ref, onMounted, defineProps, defineEmits, watch } from 'vue'
   import CountryCodeSelectInput from './CountryCodeSelectInput.vue'
-  import { format_phone, getTelecomOperatorName } from '~/utils/phone'
+  import { format_phone, getTelecomOperatorName } from '../utils/getTeleComOperator'
+  import { format_phone } from '../utils/phoneFormatter'
 
   const searchCodeCountryName = ref('')
   const showCountryCodeContainer = ref(false)
