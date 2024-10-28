@@ -53,6 +53,9 @@ export function getThailandTeleComOperators(phoneNumber) {
         "085": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
         "088": { name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
         "089": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
+        "080": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
+        "081": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
+        "090": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
     };
 
     // const dtacPrefixes = ["085","089", "084"];
@@ -66,10 +69,10 @@ export function getThailandTeleComOperators(phoneNumber) {
     //     telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
     // })
 
-    const aisPrefixes = ["080","081","090"];
-    aisPrefixes.forEach(prefix=> {
-        telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
-    })
+    // const aisPrefixes = ["080","081","090"];
+    // aisPrefixes.forEach(prefix=> {
+    //     telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+    // })
     
     const formattedPhoneNumber = format_phone(phoneNumber);
     const prefix = formattedPhoneNumber.substring(0, 3);
