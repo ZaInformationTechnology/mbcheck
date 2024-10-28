@@ -5,7 +5,7 @@ import { format_phone_mm, format_phone_th } from '../utils/phoneFormatter';
 export const getTelecomOperatorName = (phoneNumber,countryCode) => {
     switch(countryCode) {
         case '95':
-            return getMyanmarTeleComOperators(phoneNumber);
+            return getMyanmarTeleComOperators(format_phone_mm(phoneNumber));
         case '66':
             return getThailandTeleComOperators(phoneNumber);
         case '65':
@@ -47,37 +47,33 @@ export function getThailandTeleComOperators(phoneNumber) {
         return 'Phone number is required';
       }
 
-    const telecomOperators = {
-        "083": { name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
-        "084": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
-        "085": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
-        "088": { name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s" },
-        "089": { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" },
-        "080": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
-        "081": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
-        "090": { name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s" },
-    };
+      const telecomOperators = {};
 
-    // const dtacPrefixes = ["085","089", "084"];
+    const dtacPrefixes = ["085","089", "084"];
 
-    // dtacPrefixes.forEach(prefix => {
-    //     telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
-    // });
+    dtacPrefixes.forEach(prefix => {
+        telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+    });
 
-    // const trueMoveHPrefixes = ["083","084", "088"];
-    // trueMoveHPrefixes.forEach(prefix => {
-    //     telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
-    // })
+    const trueMoveHPrefixes = ["083","088"];
+    trueMoveHPrefixes.forEach(prefix => {
+        telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
+    })
 
-    // const aisPrefixes = ["080","081","090"];
-    // aisPrefixes.forEach(prefix=> {
-    //     telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
-    // })
+    const aisPrefixes = ["080","081","090"];
+    aisPrefixes.forEach(prefix=> {
+        telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+    })
+    // const formattedPhoneNumber = format_phone(phoneNumber);
+    // let phone = phoneNumber.toString();
+    // phone ='0'+phone.replace(/[^0-9+]/g, "");
+    let phone = format_phone_th(phoneNumber);
+    const prefix = phone.substring(0, 3);
+    console.log('prefix number', phone);
     
-    const formattedPhoneNumber = format_phone_th(phoneNumber);
-    const prefix = formattedPhoneNumber.substring(0, 3);
+    console.log('prefix', prefix);
     
-    return phoneNumber.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
+    return phone.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
     
 }
 
