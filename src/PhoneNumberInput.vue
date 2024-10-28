@@ -5,49 +5,54 @@
     </label>
     <div class="input-group">
       <span class="country-code-select">
-        <CountryCodeSelectInput :size="'200px'" @countryCode="receivedCountryCode" />
+        <CountryCodeSelectInput id="countryCodeSelect" />
       </span>
       <input
         type="number"
         name="phone"
         id="phone"
-        v-model="form.phone"
-        @keypress="validateInput"
         class="phone-input"
         placeholder="Enter phone number"
       />
     </div>
-    <p v-if="telecomOperator" class="operator-info">
-      Operator: {{ telecomOperator }}
+    <p id="operatorInfo" class="operator-info" style="display: none;">
+      Operator: <span id="operatorName"></span>
     </p>
   </div>
 </template>
 
-<script setup>
-import { ref, watch } from 'vue';
+<script>
 import CountryCodeSelectInput from '../components/CountryCodeSelectInput.vue';
 import { getTelecomOperatorName } from '../utils/getTeleComOperator';
 
-const form = ref({
-  phone: '',
-});
+export default {
+  components: {
+    CountryCodeSelectInput,
+  },
+  mounted() {
+    const phoneInput = document.getElementById('phone');
+    const operatorInfo = document.getElementById('operatorInfo');
+    const operatorName = document.getElementById('operatorName');
 
-const telecomOperator = ref('');
+    phoneInput.addEventListener('input', () => {
+      const phoneNumber = phoneInput.value;
+      const operator = getTelecomOperatorName(phoneNumber);
+      if (operator) {
+        operatorName.textContent = operator;
+        operatorInfo.style.display = 'block';
+      } else {
+        operatorInfo.style.display = 'none';
+      }
+    });
 
-const receivedCountryCode = (code) => {
-  console.log('Country code received:', code);
+    phoneInput.addEventListener('keypress', (event) => {
+      const regex = /[0-9]/;
+      if (!regex.test(event.key)) {
+        event.preventDefault();
+      }
+    });
+  },
 };
-
-const validateInput = (event) => {
-  const regex = /[0-9]/;
-  if (!regex.test(event.key)) {
-    event.preventDefault();
-  }
-};
-
-watch(form, (newVal) => {
-  telecomOperator.value = getTelecomOperatorName(newVal.phone);
-});
 </script>
 
 <style scoped>
