@@ -5,8 +5,7 @@
   "main": "index.js",
   "exports": {
     ".": "./index.js",
-    "./components/PhoneNumberInput.vue": "./components/PhoneNumberInput.vue",
-    "./layouts/": "./layouts/"
+    "./PhoneNumberInput.vue": "./src/PhoneNumberInput.vue"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
