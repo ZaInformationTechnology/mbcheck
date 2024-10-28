@@ -1,7 +1,7 @@
 <template>
   <div class="phone-input-container">
     <label for="phone" class="phone-label">
-      {{ $t("phone") }}
+      Phone Number
     </label>
     <div class="input-group">
       <span class="country-code-select">
