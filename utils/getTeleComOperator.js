@@ -1,6 +1,6 @@
 // composables/useTelecomOperator.js
 
-import { format_phone_mm, format_phone_th } from '../utils/phoneFormatter';
+import { format_phone_mm, format_phone_th, format_phone_sg } from '../utils/phoneFormatter';
 
 export const getTelecomOperatorName = (phoneNumber,countryCode) => {
     switch(countryCode) {
@@ -78,7 +78,43 @@ export function getThailandTeleComOperators(phoneNumber) {
 }
 
 export function getSingaporeTeleComOperators(phoneNumber) {
-    return 'Singapore Telecom Operators';
+    // return 'Singapore Telecom Operators';
+    if (!phoneNumber) {
+        return 'Phone number is required';
+      }
+
+      const telecomOperators = {};
+
+    const singtelPrefixes = ["812","813", "821","831","840", "850", "860","910","912", "932"];
+
+    singtelPrefixes.forEach(prefix => {
+        telecomOperators[prefix] = { name: "Singtel", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+    });
+
+    const starHubPrefixes = ["820","825","832","838","848","851","861","981","982"];
+    starHubPrefixes.forEach(prefix => {
+        telecomOperators[prefix] = {name: "StarHub", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
+    })
+
+    const m1Prefixes = ["818","819","823","824","836","844","845","968","969"];
+    m1Prefixes.forEach(prefix=> {
+        telecomOperators[prefix] = {name: "M1", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+    })
+
+    const tpgTelecomPrefixes = ["878","890","891","892","893","895"];
+    tpgTelecomPrefixes.forEach(prefix=> {
+        telecomOperators[prefix] = {name: "TPG Telecom", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+    })
+    // const formattedPhoneNumber = format_phone(phoneNumber);
+    // let phone = phoneNumber.toString();
+    // phone ='0'+phone.replace(/[^0-9+]/g, "");
+    let phone = format_phone_sg(phoneNumber);
+    const prefix = phone.substring(0, 3);
+    console.log('prefix number', phone);
+    
+    console.log('prefix', prefix);
+    
+    return phone.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
 }
 
 

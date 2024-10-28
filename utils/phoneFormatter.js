@@ -36,3 +36,12 @@ export const format_phone_th = (originalNumber) => {
     phone = phone.replace(/[^0-9+]/g, "");
     return phone;
 };
+
+export const format_phone_sg = (originalNumber) => {
+  if (!originalNumber) {
+    return;
+  }
+  let phone = originalNumber.toString();
+  phone = phone.replace(/[^0-9+]/g, "");
+  return phone;
+};
