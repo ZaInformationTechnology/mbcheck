@@ -34,5 +34,5 @@ export const format_phone_th = (originalNumber) => {
     }
     let phone = originalNumber.toString();
     phone = phone.replace(/[^0-9+]/g, "");
-    return '0'+phone;
+    return phone;
 };
