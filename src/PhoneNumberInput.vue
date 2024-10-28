@@ -11,7 +11,7 @@
           />
       </label>
         <input
-          
+          v-model="form.phone"
           required
           type="text"
           id="floating_filled"
@@ -59,6 +59,10 @@
     country : 'Myanmar',
     code : '95',
     flag : 'mm-flag.svg',
+  })
+
+  const form = ref({
+    phone: '',
   })
 
 
