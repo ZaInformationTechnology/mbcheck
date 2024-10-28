@@ -1,6 +1,6 @@
 // utils/phoneFormatter.js
 
-export const format_phone = (originalNumber) => {
+export const format_phone_mm = (originalNumber) => {
     if (!originalNumber) {
       return;
     }
@@ -26,4 +26,13 @@ export const format_phone = (originalNumber) => {
       return "09" + phone;
     }
     return phone;
-  };
+};
+
+export const format_phone_th = (originalNumber) => {
+    if (!originalNumber) {
+      return;
+    }
+    let phone = originalNumber.toString();
+    phone = phone.replace(/[^0-9+]/g, "");
+    return '0'+phone;
+};

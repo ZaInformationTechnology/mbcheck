@@ -1,6 +1,6 @@
 // composables/useTelecomOperator.js
 
-import { format_phone } from '../utils/phoneFormatter';
+import { format_phone_mm, format_phone_th } from '../utils/phoneFormatter';
 
 export const getTelecomOperatorName = (phoneNumber,countryCode) => {
     switch(countryCode) {
@@ -32,7 +32,7 @@ export function getMyanmarTeleComOperators(phoneNumber) {
         telecomOperators[prefix] = { name: "MPT", logo: "https://access.cdndata.cloud/marketplace/svg/mpt.svg" };
     });
     
-    const formattedPhoneNumber = format_phone(phoneNumber);
+    const formattedPhoneNumber = format_phone_mm(phoneNumber);
     const prefix = formattedPhoneNumber.substring(0, 3);
     
     if (telecomOperators[prefix].name === "MPT" || telecomOperators[prefix].name === "MEC") {
@@ -74,7 +74,7 @@ export function getThailandTeleComOperators(phoneNumber) {
     //     telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
     // })
     
-    const formattedPhoneNumber = format_phone(phoneNumber);
+    const formattedPhoneNumber = format_phone_th(phoneNumber);
     const prefix = formattedPhoneNumber.substring(0, 3);
     
     return phoneNumber.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
