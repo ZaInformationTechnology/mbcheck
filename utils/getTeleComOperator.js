@@ -43,6 +43,8 @@ export function getMyanmarTeleComOperators(phoneNumber) {
 }
 
 export function getThailandTeleComOperators(phoneNumber) {
+    console.log('phoneNumber prefix',phoneNumber);
+    
     if (!phoneNumber) {
         return 'Phone number is required';
       }
@@ -75,7 +77,11 @@ export function getThailandTeleComOperators(phoneNumber) {
     // })
     
     const formattedPhoneNumber = format_phone_th(phoneNumber);
+    console.log('formattedPhoneNumber prefix',formattedPhoneNumber);
+    
     const prefix = formattedPhoneNumber.substring(0, 3);
+    console.log('prefix',prefix);
+    
     
     return phoneNumber.length !== 10 ? 'Invalid phone number' : telecomOperators[prefix] || 'Unknown number';
     
