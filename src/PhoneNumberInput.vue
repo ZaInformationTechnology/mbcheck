@@ -57,61 +57,73 @@ export default {
 
 <style scoped>
 .phone-input-container {
-  width: 250px;
-  padding: 16px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.phone-input-container:hover {
+  background-color: #f1f1f1;
 }
 
 .phone-label {
   display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: #4a4a4a;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .input-group {
   display: flex;
   align-items: center;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .country-code-select {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #d1d5db;
+  border: 2px solid #4a90e2;
   border-right: 0;
-  background-color: #f9fafb;
-  padding: 8px;
-  color: #6b7280;
-  font-size: 14px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  background-color: #e6f7ff;
+  padding: 10px;
+  color: #007aff;
+  font-size: 16px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.country-code-select:hover {
+  background-color: #cceeff;
+  color: #005bb5;
 }
 
 .phone-input {
   flex: 1;
-  border: 1px solid #d1d5db;
+  border: 2px solid #4a90e2;
   background-color: white;
-  padding: 8px;
-  font-size: 14px;
-  color: #4a4a4a;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .phone-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
+  border-color: #007aff;
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
 }
 
 .operator-info {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #6b7280;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
 }
 </style>
