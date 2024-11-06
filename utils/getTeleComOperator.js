@@ -52,17 +52,17 @@ export function getThailandTeleComOperators(phoneNumber) {
     const dtacPrefixes = ["085","089", "084"];
 
     dtacPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+        telecomOperators[prefix] = { name: "DTAC", logo: "https://access.cdndata.cloud/marketplace/svg/dtac-logo.svg" };
     });
 
     const trueMoveHPrefixes = ["083","088"];
     trueMoveHPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = {name: "TrueMove", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
+        telecomOperators[prefix] = {name: "TrueMove", logo: "https://access.cdndata.cloud/marketplace/svg/truemoveh-logo.svg"};
     })
 
     const aisPrefixes = ["080","081","090"];
     aisPrefixes.forEach(prefix=> {
-        telecomOperators[prefix] = {name: "AIS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+        telecomOperators[prefix] = {name: "AIS", logo: "https://access.cdndata.cloud/marketplace/svg/ais-logo.svg"};
     })
     // const formattedPhoneNumber = format_phone(phoneNumber);
     // let phone = phoneNumber.toString();
@@ -88,22 +88,22 @@ export function getSingaporeTeleComOperators(phoneNumber) {
     const singtelPrefixes = ["812","813", "821","831","840", "850", "860","910","912", "932"];
 
     singtelPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = { name: "Singtel", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+        telecomOperators[prefix] = { name: "Singtel", logo: "https://access.cdndata.cloud/marketplace/svg/singtel-logo.svg" };
     });
 
     const starHubPrefixes = ["820","825","832","838","848","851","861","981","982"];
     starHubPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = {name: "StarHub", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj2c-85aoKaIe-S67qLBw0EwDUtVBtVGYvA&s"};
+        telecomOperators[prefix] = {name: "StarHub", logo: "https://access.cdndata.cloud/marketplace/svg/starhub-logo.svg"};
     })
 
     const m1Prefixes = ["818","819","823","824","836","844","845","968","969"];
     m1Prefixes.forEach(prefix=> {
-        telecomOperators[prefix] = {name: "M1", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+        telecomOperators[prefix] = {name: "M1", logo: "https://access.cdndata.cloud/marketplace/svg/m1-logo.svg"};
     })
 
     const tpgTelecomPrefixes = ["878","890","891","892","893","895"];
     tpgTelecomPrefixes.forEach(prefix=> {
-        telecomOperators[prefix] = {name: "TPG Telecom", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgH6ItJQ-43v9YxGbKSiw_89xbuMjpy72Gw&s"};
+        telecomOperators[prefix] = {name: "TPG Telecom", logo: "https://access.cdndata.cloud/marketplace/svg/tpg-telecom-logo.svg"};
     })
     // const formattedPhoneNumber = format_phone(phoneNumber);
     // let phone = phoneNumber.toString();
