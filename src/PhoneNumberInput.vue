@@ -23,7 +23,7 @@
 
 <script>
 import CountryCodeSelectInput from '../components/CountryCodeSelectInput.vue';
-import { getTelecomOperatorName } from '../utils/getTeleComOperator';
+import { getTelecomOperatorName } from '../composables/useTeleComOperator';
 
 export default {
   components: {
