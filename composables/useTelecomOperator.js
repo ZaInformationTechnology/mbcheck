@@ -52,7 +52,7 @@ export function getThailandTeleComOperators(phoneNumber) {
     const dtacPrefixes = ["085","089", "084"];
 
     dtacPrefixes.forEach(prefix => {
-        telecomOperators[prefix] = { name: "DTAC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTitBiLAVuvfi9KBRZlAlOIGKzbGYRNw4LUq7cNqo4_enV_fY0w_o8rVyrfUJqmhgWKse0&usqp=CAU" };
+        telecomOperators[prefix] = { name: "DTAC", logo: "https://access.cdndata.cloud/marketplace/svg/ooredoo.svg" };
     });
 
     const trueMoveHPrefixes = ["083","088"];
